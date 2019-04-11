@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Find Guilty</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+#container mt-3{
+width: 500px;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+
+.navbar{
+text-align:center;
+font-size:24px;
+<!--justify-content:center;-->
+}
+body {
+ background-color:#C0C0C0;
+ 
+ }
+ .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <span class="navbar-text">
+   Data Leakage Detection
+  </span>
+</nav>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 ">
+         <div class="list-group ">
+              <a href="Admin.html" class="list-group-item list-group-item-action active">Dashboard</a>
+        <a href="../Homepage.html" class="list-group-item list-group-item-action">Homepage</a>
+              <a href="../CosineSimilarity/SimilarityFrontend.html" class="list-group-item list-group-item-action">Similarity of Documents</a>
+              <a href="GuiltyAgent.html" class="list-group-item list-group-item-action">Find Guilty</a>
+              <a href="searchdata.html" class="list-group-item list-group-item-action">Display User Details</a>
+              <a href="logout.php" class="list-group-item list-group-item-action">Logout</a> 
+              
+              
+              
+            </div> 
+    </div>
+
+
+<div id="container mt-3">
+  <h2>Generate Report</h2>
+	<p> Select Leaked File to find the Agent who has leaked the file </p>
+  <form action="FindAgent.php" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" name="file" class="form-control-file" id="exampleFormControlFile1">
+	 <div class="mt-3">
+      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+<div class="footer">
+ <p style="color:black">Developed By :- Bhavna Varshney , Anurag Varshney & Akshat Gandhi</p>
+</div>
+</body>
+</html>
