@@ -10,25 +10,8 @@
 .navbar{
 text-align:center;
 font-size:24px;
-<!--justify-content:center;-->
-}
-body {
- background-color:#C0C0C0;
- }
- .nav_float_1{
-  margin-left: 62px;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   color: white;
-   text-align: center;
-}
- .container {
-   margin-left: 475px;
-   margin-top: 0;
-   width: 100%;
-   color: white;
-   text-align: center;
+background-color:#002366;
+color:white;
 }
 
 .files input {
@@ -81,85 +64,107 @@ body {
   width: 100%;
   margin: 0;
   color: #fff;
-  background: #337AB7;
+  background: black;
   border: none;
   padding: 10px;
   border-radius: 4px;
-  border-bottom: 4px solid #337AB7;
+  border-bottom: 4px solid;
   transition: all .2s ease;
   outline: none;
   text-transform: uppercase;
   font-weight: 700;
 }
 body{
-background-color: C0C0C0;
+background-color: white;
 }
-#data{
-  margin: 20px;
+.jumbotron{
+margin-left: auto;
+margin-right: auto;
+margin-top: 
+background-color : #fefefe;
+color:white;
+border-radius:5%;
+text-align:center;
+vertical-align: top;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+.table1{
+  vertical-align: top;
+  
 }
 </style>
 </head>
 
 <body>
+ <?php
+//S3 Handshake
+  //S3 Handshake
+  require 'C:Path to Composer Autoload php File';
+$credentials = new Aws\Credentials\Credentials('Your secret AWS Key and ID');
 
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+$s3 = new Aws\S3\S3Client([
+    'version'     => 'latest',
+    'region'      => 'your AWS region',
+    'credentials' => $credentials
+]);  
+
+{
+//Session 
+  
+  session_start();
+  $username = $_SESSION['username'];
+  
+  
+  // Fetching UID number
+  $conn = mysqli_connect("","","");
+  mysqli_select_db($conn,"dbname");
+  $sql = "Select UID from users where username='$username'";
+  $result = mysqli_query($conn,$sql);
+  if(mysqli_num_rows($result)!=0){
+    while($row = mysqli_fetch_assoc($result))
+      $uid = $row['UID'];
+  }
+
+//Retrieve Files
+    try{
+  $objects = $s3->getIterator('ListObjects', array(
+      'Bucket' => 'user'.$uid
+         //'Prefix' => 'files/' to indicate a folder
+  ));
+  ?>
+          
+ 
+<nav class="navbar navbar-expand-lg">
   <span class="navbar-text">
    Data Leakage Detection
   </span>
 </nav>
 <br><br>
-<div class="nav_float_1">
+<div class="container">
   <div class="row">
     <div class="col-md-3 ">
          <div class="list-group ">
               
-        <a href="../Homepage.html" class="list-group-item list-group-item-action" >Homepage</a>
-        <a href="logout.php" class="list-group-item list-group-item-action">Logout</a>         
+        <a href="UserAccount.php" class="list-group-item list-group-item-action" style = "background-color:black;color:white;">My Account</a>
+		<a href="UserAccount.php" class="list-group-item list-group-item-action"> Upload File </a> 
+		<a href="view.php" class="list-group-item list-group-item-action" style = "background-color:#002366;color:white;">View or Share File </a>  
+        <a href="logout.php" class="list-group-item list-group-item-action">Logout</a> 
               
               
             </div> 
     </div>
-    <div class="col-md-9">
-        
-            </div>
-          </div>
-        </div>
-        <div id="data"> 
-<?php
-//S3 Handshake
-	require 'C:\Users\project G22\vendor\autoload.php';
+  
 
-$s3 = new Aws\S3\S3Client([
-    'version'     => 'latest',
-    'region'      => 'ap-south-1',
-    'credentials' => $credentials
-]);	 
-
-if(isset($_POST["View"])){
-//Session 
-	
-	session_start();
-	$username = $_SESSION['username'];
-	
-	
-	// Fetching UID number
-	$conn = mysqli_connect("localhost","root","");
-	mysqli_select_db($conn,"project1");
-	$sql = "Select UID from users where username='$username'";
-	$result = mysqli_query($conn,$sql);
-	if(mysqli_num_rows($result)!=0){
-		while($row = mysqli_fetch_assoc($result))
-			$uid = $row['UID'];
-	}
-
-//Retrieve Files
-    try{
-	$objects = $s3->getIterator('ListObjects', array(
-	    'Bucket' => 'user'.$uid
-	       //'Prefix' => 'files/' to indicate a folder
-	));
-	
-	echo "<table><tr><th colspan='4'><h1> Your Files </h1></th></tr>";
+<div class="col-md-3 " >
+	<?php
+	echo "<table class='table1'><tr><th colspan='4' rowspan='1'><h1> Your Files </h1></th></tr>";
 	foreach ($objects as $object) {
 		$tagit = $object['Key'];
     $array = explode("_",$tagit);
@@ -181,6 +186,12 @@ catch (S3Exception $e) {
 
 
 ?>
+</div>
+</div>
+</div>
+
+<div class="footer">
+ <p style="color:black">Developed By :- Akshat Gandhi, Bhavna Varshney & Anurag Varshney</p>
 </div>
 </body>
 

@@ -1,0 +1,80 @@
+<html>
+<head>
+	<title> Similarity of Documents </title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.jumbotron{
+width: 700px;
+margin-left: auto;
+margin-right: auto;
+background-color : #002366;
+color:white;
+border-radius:5%;
+}
+
+.navbar{
+text-align:center;
+font-size:24px;
+background-color:#002366;
+color:white;
+}
+
+body {
+ background-color:white; 
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+</style>
+</head>
+
+<body> 
+	<nav class="navbar navbar-expand-lg">
+  <span class="navbar-text">
+   Data Leakage Detection
+  </span>
+</nav>
+<br><br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 ">
+		     <div class="list-group ">
+     
+			  <a href="../Homepage.html" class="list-group-item list-group-item-action">Homepage</a>
+              <a href="../Login&Registration/Admin.html" class="list-group-item list-group-item-action">Add User </a>
+              <a href="#" style = "background-color:#002366;color:white;" class="list-group-item list-group-item-action">Similarity of Documents</a>
+           
+              <a href="../Login&Registration/GuiltyAgent.html" class="list-group-item list-group-item-action">Find Guilty</a>
+              <a href="../Login&Registration/searchdata.html" class="list-group-item list-group-item-action">Display User Details</a>
+			  <a href="../Homepage.html" class="list-group-item list-group-item-action">Logout</a>
+      
+            </div> 
+		</div>
+<br>
+<div class="jumbotron text-center" >
+	<h2> Similarity Of Documents </h2> <br><br>
+	
+	<h4> Select Two files to check it's similiarity </h4> <br><br>
+	
+	<form action="CosineSimilarityCalculation.php" method="post" name="similiarity" enctype = "multipart/form-data">
+	File 1 : <input type="file" name="file1" id="file1"> <br><br>
+	File 2 : <input type="file" name="file2" id="file2"> <br><br>
+	<input type="submit"> 
+	</form>
+</center>
+</div>
+</div>
+<div class="footer">
+ <p style="color:black">Developed By :- Akshat Gandhi , Bhavna Varshney & Anurag Varshney</p>
+</div>
+</div>
+</body>
+</html>

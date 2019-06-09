@@ -10,14 +10,32 @@
 .navbar{
 text-align:center;
 font-size:24px;
+background-color : #002366;
+color : white;
 <!--justify-content:center;-->
 }
+#dashboard{
+	background-color : #002366;
+	color:white;
+}
 body {
- background-color:#C0C0C0;
+ background-color:white;
  
  }
  .con {
    
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+#submit{
+	background-color:#002366;
+	color:white;
+}
+.footer {
+	margin-top:10%;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -29,7 +47,7 @@ body {
 
 <body>
  
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar ">
   <span class="navbar-text">
    Data Leakage Detection
   </span>
@@ -39,19 +57,21 @@ body {
 <div class="container">
 	<div class="row">
 		<div class="col-md-3 ">
+		
 		     <div class="list-group ">
-
-			  <a href="../Homepage.html" class="list-group-item list-group-item-action">Homepage</a>
-              <a href="Admin.html" class="list-group-item list-group-item-action">Add User </a>
+				
+			  <a href="../Homepage.html" style = "background-color:#002366;color:white;" class="list-group-item list-group-item-action">Homepage</a>
+              <a href="#"  class="list-group-item list-group-item-action">Add User </a>
               <a href="../CosineSimilarity/SimilarityFrontend.html" class="list-group-item list-group-item-action">Similarity of Documents</a>
 
               <a href="GuiltyAgent.html" class="list-group-item list-group-item-action">Find Guilty</a>
-              <a href="#" class="list-group-item list-group-item-action">Display User Details</a>
+              <a href="searchdata.html" class="list-group-item list-group-item-action">Display User Details</a>
 			   <a href="logout.php" class="list-group-item list-group-item-action">Logout</a> 
               
               
               
-            </div> 
+            
+		</div>
 		</div>
 		<div class="col-md-9">
 		    <div class="card">
@@ -138,7 +158,7 @@ body {
  
                               <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                  <button name="submit" type="submit" class="btn btn-primary">Add User</button>
+                                  <button name="submit" type="submit" id="submit" class="btn">Add User</button>
                                 </div>
                               </div>
                             </form>
@@ -151,9 +171,14 @@ body {
 	</div>
 </div>
 
-<footer class="con">
- <p style="color:black">Developed By :- Bhavna Varshney , Anurag Varshney & Akshat Gandhi</p>
+
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3"> <p>  </p>
+    <p style="color:black"> © 2019 Copyright: Developed By : Akshat Gandhi, Bhavna Varshney & Anurag Varshney </p>
+  </div>
 </footer>
+
+
 </body>
 
 </html>

@@ -1,18 +1,20 @@
 <?php
-require 'C:\Users\project G22\vendor\autoload.php';
+require 'Path to composer autoload.php';
 // S3 Handshake
+
+$credentials = new Aws\Credentials\Credentials('Your AWS Credentials');
 					$s3 = new Aws\S3\S3Client([//create s3 cient
 					    'version'     => 'latest',
-					    'region'      => 'ap-south-1',
+					    'region'      => 'Your AWS Region',
 					    'credentials' => $credentials
 					]);	
 	
 
 	if($_SERVER['REQUEST_METHOD']=="GET"){
-			$localhost = "localhost";
-		$username = "root";
+			$localhost = "";
+		$username = "";
 		$password = "";
-		$db = "project1";
+		$db = "";
 		
 		$name = $_GET['name'];
 		$user = $_GET['user'];
@@ -30,9 +32,9 @@ require 'C:\Users\project G22\vendor\autoload.php';
 			echo "Connection error : " .mysqli_connect_error();
 		else{
 		
-			$sql = "Insert into Users(Name,Username,Password,Gender,DOB,Email,Aadhar,Pan,Address,Phone) values('$name','$user','$pass','$gender','$dob','$email','$aadhar','$pan','$address','$phone')";
+			$sql = "Insert into Users(Name,Username,Password,Gender,DOB,Email,Aadhar,PAN,Address,Phone) values('$name','$user','$pass','$gender','$dob','$email','$aadhar','$pan','$address','$phone')";
 			if($status = mysqli_query($conn,$sql)){
-				echo "<script type='text/javascript'>alert('Data Inserted');</script>";
+				echo "Data Inserted";
 				$sql = "Select UID from users where username='$user'";
 				$result = mysqli_query($conn,$sql);
 				

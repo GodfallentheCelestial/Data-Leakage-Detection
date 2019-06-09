@@ -10,10 +10,11 @@
 .navbar{
 text-align:center;
 font-size:24px;
-<!--justify-content:center;-->
+background-color:#002366;
+color:white;
 }
 body {
- background-color:#C0C0C0;
+ background-color:white;
  }
  .nav_float_1{
   margin-left: 62px;
@@ -23,13 +24,7 @@ body {
    color: white;
    text-align: center;
 }
- .container {
-   margin-left: 475px;
-   margin-top: 0;
-   width: 100%;
-   color: white;
-   text-align: center;
-}
+ 
 
 .files input {
     outline: 2px dashed #92b0b3;
@@ -81,66 +76,80 @@ body {
   width: 100%;
   margin: 0;
   color: #fff;
-  background: #337AB7;
+  background: black;
   border: none;
   padding: 10px;
   border-radius: 4px;
-  border-bottom: 4px solid #337AB7;
+  border-bottom: 4px solid black;
   transition: all .2s ease;
   outline: none;
   text-transform: uppercase;
   font-weight: 700;
 }
-body{
-background-color: C0C0C0;
+.jumbotron{
+
+margin-left: auto;
+margin-right: auto;
+background-color : #002366;
+color:white;
+border-radius:5%;
+text-align:center;
 }
+
+.footer {
+  
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+   background-color : white;
+}
+
 
 </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg">
   <span class="navbar-text">
    Data Leakage Detection
   </span>
 </nav>
 <br><br>
-<div class="nav_float_1">
+<div class="container">
+
   <div class="row">
     <div class="col-md-3 ">
          <div class="list-group ">
               
-        <a href="../Homepage.html" class="list-group-item list-group-item-action" >Homepage</a>
+        <a href="#" class="list-group-item list-group-item-action" style = "background-color:black;color:white;">My Account</a>
+		<a href="UserAccount.php" class="list-group-item list-group-item-action" style = "background-color:#002366;color:white;" > Upload File </a> 
+		<a href="view.php" class="list-group-item list-group-item-action">View or Share File </a>  
         <a href="logout.php" class="list-group-item list-group-item-action">Logout</a>         
               
               
             </div> 
     </div>
-    <div class="col-md-9">
-        
-            </div>
-          </div>
-        </div>
 
-<div class="container">
-	<div class="row">
-	  <div class="col-md-6"><br><br>
-	<p style="font-size:30px"><font color="blue">Welcome <?php echo $_SESSION["username"]; ?>
-	<form name="user" method="POST" action="user.php" enctype = "multipart/form-data" id="#">
+	<div class="col-md-9">
+			<div class="jumbotron text-center">
+				<h3> Welcome <?php echo $_SESSION["username"]; ?> </h3>
+				<form name="user" method="POST" action="user.php" enctype = "multipart/form-data" id="#">
 		<div class="form-group files">
 			  
-                <p style="font-size:20px"><label>Upload Your File </label></p>
+                <h3 style="font-size:20px"><label>Upload Your File </label></h3>
 		<input type="file" name="file" id="file" class="form-control" ></div>
 		<input type="submit" value="upload" name="Upload" class="file-upload-btn" >
 
-	</form>
-<br><br>
-	<form name="user" method="POST" action="view.php" enctype="multipart/form-data">
-		<input type="submit" value="view" name="View" class="file-upload-btn">
-	</form>
+	</form>	
 	 </div>
 	</div>
+   </div>
+   
+<div class="footer">
+ <p style="color:black">Developed By :- Akshat Gandhi , Bhavna Varshney & Anurag Varshney</p>
 </div>
 </body>
 

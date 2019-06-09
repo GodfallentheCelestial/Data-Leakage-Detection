@@ -21,21 +21,26 @@ border:1px solid #2980B9
 .navbar{
 text-align:center;
 font-size:24px;
+background-color:#002366;
+color:white;
 <!--justify-content:center;-->
-
 }
-body {
- background-image: url("../bg.jpg");
- background-size: 100%;
- background-repeat: no-repeat; 
- }
+
+.submit{
+	color:white;
+	background-color:#002366;
+}
+
  .footer {
-   position: fixed;
+   position: relative;
    left: 0;
    bottom: 0;
+   right:0;
    width: 100%;
-   color: white;
+   clear:both;
+   color: black;
    text-align: center;
+  margin-top: 10%;
 }
 
 	
@@ -46,7 +51,7 @@ body {
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body>
-	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+	<nav class="navbar navbar-expand-lg ">
   <span class="navbar-text">
    Data Leakage Detection
   </span>
@@ -56,13 +61,12 @@ body {
 	<div class="row">
 		<div class="col-md-3 ">
 		     <div class="list-group ">
-              <a href="Admin.html" class="list-group-item list-group-item-action active">Dashboard</a>
+              
 			  <a href="../Homepage.html" class="list-group-item list-group-item-action">Homepage</a>
               <a href="Admin.html" class="list-group-item list-group-item-action">Add User </a>
               <a href="../CosineSimilarity/SimilarityFrontend.html" class="list-group-item list-group-item-action">Similarity of Documents</a>
-              <a href="#" class="list-group-item list-group-item-action">File Management</a>
               <a href="GuiltyAgent.html" class="list-group-item list-group-item-action">Find Guilty</a>
-              <a href="searchdata.html" class="list-group-item list-group-item-action">Display User Details</a>
+              <a href="#" style = "background-color:#002366;color:white;" class="list-group-item list-group-item-action">Display User Details</a>
 			  <a href="../Homepage.html" class="list-group-item list-group-item-action">Logout</a>
               
               
@@ -73,32 +77,18 @@ body {
 	<div id="container1">
 	<form action="searchdata.php" method="POST"><br><br>
 	<input type="text" name="UID" class="btn" placeholder="Enter UID" class="form-control" />&nbsp;&nbsp;&nbsp;
-	<input type="submit" name="search" class="btn btn-primary" value="Search by UID" />
+	<input type="submit" name="search" class="btn submit" value="Search by UID" />
 	
 	</form>
 	</center>
-	<!--
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Usename</th>
-			<th>Password</th>
-			<th>Gender</th>
-			<th>DOB</th>
-			<th>Email</th>
-			<th>Aadhar</th>
-			<th>Pan</th>
-			<th>Address</th>
-			<th>Phone</th>
-			
-		</tr><br>
-		</table>
-		-->
+	
 		</div>
 		</div>
-		<div class="footer">
- <p style="color:black">Developed By :- Bhavna Varshney , Anurag Varshney & Akshat Gandhi</p>
-</div>
+<footer class="footer page-footer">
+  <div class="footer-copyright text-center "> <p>  </p>
+    <p style="color:black"> &copy; 2019 Copyright: Developed By : Akshat Gandhi , Bhavna Varshney & Anurag Varshney </p>
+  </div>
+</footer>
    
 
 	</body>

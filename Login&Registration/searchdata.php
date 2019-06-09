@@ -2,12 +2,24 @@
 <html>
 <head>
 	<title>Search Data By ID</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<style>
+	
+	.navbar{
+	text-align:center;
+	font-size:24px;
+	background-color:#002366;
+	color:white;
+	}
 	
 	th{
 		border: 2px solid black;
 		width: 1100px;
-		background-color: 	#1a8cff;
+		background-color: 	#002366;
+		color:white;
 	}
 	.btn{
 		width:20%;
@@ -16,7 +28,7 @@
 		padding: 0px;
 	}
 	body {
- background-color:#C0C0C0;
+ background-color:white;
  
  }
  .footer {
@@ -30,7 +42,13 @@
 	</style>
 	</head>
 	<body>
-	<center><h1> User Details</h1></center>
+	<nav class="navbar navbar-expand-lg">
+  <span class="navbar-text">
+   Data Leakage Detection
+  </span>
+</nav>
+<br><br>
+	<center><h3> User Details</h3></center>
 	<!--
 	<div class="container">
 	<form action="" method="POST">
@@ -53,7 +71,7 @@
 			
 		</tr><br>
 		<?php
-		$connection = mysqli_connect("localhost","root","");
+		$connection = mysqli_connect("","","");
 		$db = mysqli_select_db($connection,'project1');
 		if(isset($_POST['search']))
 		{
@@ -71,7 +89,7 @@
 					<td> <?php echo $row['DOB']; ?> </td>
 					<td> <?php echo $row['Email']; ?> </td>
 					<td> <?php echo $row['Aadhar']; ?> </td>
-					<td> <?php echo $row['Pan']; ?> </td>
+					<td> <?php echo $row['PAN']; ?> </td>
 					<td> <?php echo $row['Address']; ?> </td>
 					<td> <?php echo $row['Phone']; ?> </td>
 				</tr>
@@ -81,7 +99,7 @@
 		?>
 	</table>
 	<div class="footer">
- <p style="color:black">Developed By :- Bhavna Varshney , Anurag Varshney & Akshat Gandhi</p>
+ <p style="color:black">Developed By :- Akshat Gandhi , Bhavna Varshney & Anurag Varshney</p>
 </div>
 	</body>
 	</html>

@@ -1,10 +1,11 @@
 <?php
 
 //Libraries Section
-require 'C:\Users\project G22\vendor\autoload.php';  //Audio Library
+require 'C:Path to Composer Autoload php File';
 require_once('..\EncryptionAndDecryption\aes.php');  //Encryption Library
 include('functions.php');  //Image Library
 require_once('..\PDF\EmbedPdfLibrary.php'); //PDF Library
+require 'KeyGeneration.php';
 
 if(isset($_POST['Share'])){
 
@@ -16,10 +17,12 @@ if(isset($_POST['Share'])){
 	else{
 		
 	//S3 Handshake
+	
+$credentials = new Aws\Credentials\Credentials('Your secret AWS Key and ID');
 
 	$s3 = new Aws\S3\S3Client([
 	    'version'     => 'latest',
-	    'region'      => 'ap-south-1',
+	    'region'      => 'Your AWS Region',
 	    'credentials' => $credentials
 	]);	
 
@@ -29,7 +32,7 @@ if(isset($_POST['Share'])){
 	
 	
 	// Fetching Source User UID number
-	$conn = mysqli_connect("localhost","root","");
+	$conn = mysqli_connect("","","");
 	mysqli_select_db($conn,"project1");
 	$sql = "Select UID from users where username='$username'";
 	$result = mysqli_query($conn,$sql);
@@ -63,7 +66,8 @@ if(isset($_POST['Share'])){
 		$arrays = explode("_",$filename);
 		$author_uid = $arrays[0];
 		$dest = str_replace(".encrypt","",$filename);
-		$decryptedFile = decryption("UploadedFiles/".$filename,$author_uid,$dest);
+		$key = generatekey($author_uid);
+		$decryptedFile = decryption("UploadedFiles/".$filename,$key,$dest);
 		
 		
 	//Extension Fetching
@@ -78,7 +82,7 @@ if(isset($_POST['Share'])){
 			$binary = encodeUID($target_uid);
 			$embed_data = makeUIDPdf($binary);
 			embedPdf($decryptedFile,$embed_data);
-			$encryptedFilepdf = encryption($decryptedFile,$author_uid,'Share/'.$decryptedFile.".encrypt");
+			$encryptedFilepdf = encryption($decryptedFile,$key,'Share/'.$decryptedFile.".encrypt");
 			try{//putting an object
 				$result = $s3->putObject([
 					'Bucket' => $targetBucket,
@@ -143,8 +147,8 @@ if(isset($_POST['Share'])){
 		else if($ext=='mp3'){
 			//Audio Share Code
 			$ffmpeg = FFMpeg\FFMpeg::create(array(
-            'ffmpeg.binaries' => 'C:/Users/project G22/vendor/php-ffmpeg/php-ffmpeg/bin/ffmpeg.exe',
-            'ffprobe.binaries' => 'C:/Users/project G22/vendor/php-ffmpeg/php-ffmpeg/bin/ffprobe.exe',
+            'ffmpeg.binaries' => 'Path to ffmpeg.exe',
+            'ffprobe.binaries' => 'Path to ffprobe.exe',
             'timeout' => 0, // The timeout for the underlying process
 			'ffmpeg.threads' => 12, // The number of threads that FFMpeg should use
 			), @$logger);
@@ -167,7 +171,7 @@ if(isset($_POST['Share'])){
 			$audio->save($format, $decryptedFile);//save to file
 			
 		
-		$encryptedFile2 = encryption($target_file,$author_uid,'Share/'.$decryptedFile.".encrypt");
+		$encryptedFile2 = encryption($target_file,$key,'Share/'.$decryptedFile.".encrypt");
 		$message = "Your File has been Shared!";
                 echo "<script type='text/javascript'>alert('$message');</script>";
 		

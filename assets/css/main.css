@@ -102,7 +102,7 @@ ul li, ol li {
 }
 
 .btn-common {
-  background-color: #137ED9;
+  background-color: #002366;
   position: relative;
   z-index: 1;
 }
@@ -117,21 +117,21 @@ ul li, ol li {
 }
 
 .btn-border {
-  color: #137ED9;
+  color: #002366;
   background-color: transparent;
-  border: 1px solid #137ED9;
+  border: 1px solid #002366;
 }
 
 .btn-border:hover {
   color: #fff;
-  border-color: #137ED9;
-  background-color: #137ED9;
+  border-color: #002366;
+  background-color: #002366;
 }
 
 .btn-border:focus {
   color: #fff;
-  border-color: #137ED9;
-  background-color: #137ED9;
+  border-color: #002366;
+  background-color: #002366;
 }
 
 .btn-lg {
@@ -150,7 +150,7 @@ button:focus {
 }
 
 .icon-close, .icon-check {
-  color: #137ED9;
+  color: #002366;
 }
 
 .social-icon a {
@@ -210,7 +210,7 @@ a.back-to-top i {
   height: 40px;
   line-height: 40px;
   color: #fff;
-  background: #137ED9;
+  background: #002366;
   border-radius: 30px;
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -253,7 +253,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   height: 100%;
   border-radius: 100%;
   border: 7px solid transparent;
-  border-top-color: #137ED9;
+  border-top-color: #002366;
 }
 
 #loader-1:before {
@@ -322,7 +322,7 @@ hr {
 }
 
 .features-box .features-icon i {
-  color: #137ED9;
+  color: #002366;
   font-size: 30px;
 }
 
@@ -377,7 +377,7 @@ hr {
   width: 42px;
   display: block;
   height: 42px;
-  color: #137ED9;
+  color: #002366;
 }
 
 .services-item .services-content h3 {
@@ -393,7 +393,7 @@ hr {
 }
 
 .services-item .services-content h3 a:hover {
-  color: #137ED9;
+  color: #002366;
 }
 
 .navbar-brand {
@@ -425,18 +425,18 @@ hr {
 }
 
 .top-nav-collapse .navbar-nav .nav-link {
-  color: #585b60 !important;
+  color: white !important;
   margin-top: 0px !important;
   margin-bottom: 0px !important;
 }
 
 .top-nav-collapse .navbar-nav .nav-link:hover {
   cursor: pointer;
-  color: #137ED9 !important;
+  color: white !important;
 }
 
 .top-nav-collapse .navbar-nav li.active a.nav-link {
-  color: #137ED9 !important;
+  color: white !important;
 }
 
 .indigo {
@@ -457,7 +457,7 @@ hr {
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-  color: #585b60;
+  color: white;
   font-weight: 400;
   padding: 8px 17px;
   margin-top: 15px;
@@ -474,7 +474,7 @@ hr {
 .navbar-expand-lg .navbar-nav li a:hover,
 .navbar-expand-lg .navbar-nav li .active > a,
 .navbar-expand-lg .navbar-nav li a:focus {
-  color: #137ED9;
+  color: white;
   outline: none;
 }
 
@@ -482,12 +482,12 @@ hr {
 .navbar-expand-lg .navbar-nav .nav-link.active,
 .navbar-expand-lg .navbar-nav .nav-link.open,
 .navbar-expand-lg .navbar-nav .open > .nav-link {
-  color: #137ED9 !important;
+  color: white !important;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:focus,
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-  color: #137ED9 !important;
+  color: white !important;
 }
 
 .navbar {
@@ -495,7 +495,7 @@ hr {
 }
 
 .navbar li.active a.nav-link {
-  color: #137ED9;
+  color: white;
 }
 
 .dropdown-toggle::after {
@@ -579,7 +579,7 @@ hr {
 .dropdown .dropdown-item:focus,
 .dropdown .dropdown-item:hover,
 .dropdown .dropdown-item.active {
-  color: #137ED9;
+  color: #002366;
   background: #f7f7f7;
 }
 
@@ -593,11 +593,11 @@ hr {
 }
 
 .slicknav_btn {
-  border-color: #137ED9;
+  border-color: white;
 }
 
 .slicknav_menu .slicknav_icon-bar {
-  background: #137ED9;
+  background: #002366;
 }
 
 /* only small tablets */
@@ -637,9 +637,9 @@ hr {
   .slicknav_nav a:hover,
   .slicknav_nav a:focus,
   .slicknav_nav .active {
-    color: #FD6E74;
+    color: white;
     outline: none;
-    background: #f8f9fa;
+    background: #white;
   }
 }
 
@@ -662,15 +662,15 @@ hr {
     display: block;
   }
   .slicknav_nav .active a {
-    background: #E91E63;
-    color: #fff;
+    background: white;
+    color: white;
   }
   .slicknav_nav a:hover,
   .slicknav_nav a:focus,
   .slicknav_nav .active {
-    color: #137ED9;
+    color: white;
     outline: none;
-    background: #f8f9fa;
+    background: white;
   }
 }
 
@@ -772,7 +772,7 @@ hr {
   color: #fff;
   width: 36px;
   height: 36px;
-  background: #137ED9;
+  background: #002366;
   display: block;
   border-radius: 4px;
   line-height: 36px;
@@ -811,7 +811,7 @@ hr {
 }
 
 .team-item .info-text h3 a:hover {
-  color: #137ED9;
+  color: #002366;
 }
 
 .team-item .info-text p {
@@ -837,7 +837,7 @@ hr {
 
 #pricing .title h3 {
   text-transform: uppercase;
-  color: #137ED9;
+  color: #002366;
   font-size: 15px;
   margin-bottom: 0px;
 }
@@ -859,7 +859,7 @@ hr {
 }
 
 #pricing .table .icon i {
-  color: #137ED9;
+  color: #002366;
   font-size: 42px;
 }
 
@@ -958,7 +958,7 @@ hr {
 }
 
 .testimonial-item .info h2 a {
-  color: #137ED9;
+  color: #002366;
 }
 
 .testimonial-item .info h3 {
@@ -977,7 +977,7 @@ hr {
 .testimonial-item .info .indicator {
   font-size: 26px;
   font-weight: 700;
-  color: #137ED9;
+  color: #002366;
 }
 
 .testimonial-item .icon-social {
@@ -1062,7 +1062,7 @@ hr {
 }
 
 .owl-carousel button.owl-dot.active span, .owl-carousel button.owl-dot.clickable, .owl-carousel button.owl-dot:hover span {
-  background: #137ED9;
+  background: #002366;
 }
 
 .slick-slider {
@@ -1102,7 +1102,7 @@ hr {
 }
 
 .form-control:focus {
-  border-color: #137ED9;
+  border-color: #002366;
   box-shadow: none;
   outline: none;
 }
@@ -1149,7 +1149,7 @@ textarea {
 }
 
 .contact-right .contact-icon {
-  background: #137ED9;
+  background: #002366;
   color: #fff;
   border-radius: 50%;
   font-size: 20px;
@@ -1225,7 +1225,7 @@ textarea {
   border-radius: 50px;
   position: relative;
   height: 52px;
-  border: 1px solid #137ED9;
+  border: 1px solid #002366;
 }
 
 .subscribe .btn-submit {
@@ -1237,7 +1237,7 @@ textarea {
 .subscribe .btn-submit i {
   width: 48px;
   height: 48px;
-  background: #137ED9;
+  background: #002366;
   cursor: pointer;
   display: block;
   color: #fff;
@@ -1269,7 +1269,7 @@ textarea {
 }
 
 .footer-area ul li a:hover {
-  color: #137ED9;
+  color: #002366;
 }
 
 .footer-area #subscribe-form {
@@ -1288,7 +1288,7 @@ textarea {
   height: 39px;
   border-radius: 0;
   background: transparent;
-  color: #137ED9;
+  color: #002366;
   border-left: 1px solid #ddd;
 }
 
@@ -1310,5 +1310,5 @@ textarea {
 }
 
 #copyright p a:hover {
-  color: #137ED9;
+  color: #002366;
 }

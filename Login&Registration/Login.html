@@ -13,11 +13,15 @@
    color: white;
    text-align: center;
 }
+#do_login{
+	color: white;
+	background : black;
+}
 </style> 
 </head>
 
 <body>
-<form action ="Authentication.php" method="GET">
+<form action ="Authentication.php" method="POST">
 <div class='box'>
   <div class='box-form'>
     <div class='box-login-tab'></div>
@@ -28,7 +32,7 @@
       <div class='fieldset-body' id='login_form'>
         <!--<button onclick="openLoginInfo();" class='b b-form i i-more' title='Mais Informações'></button>
         	--> <p class='field'>
-          <label for='user'>E-MAIL</label>
+          <label for='user'>USERNAME</label>
           <input type='text' id='user' name='user' title='Username' />
           <span id='valida' class='i i-warning'></span>
         </p>
@@ -60,7 +64,7 @@
 
  </form>
   <div class="footer">
- <p style="color:white">Developed By :- Bhavna Varshney , Anurag Varshney & Akshat Gandhi</p>
+ <p style="color:white">Developed By :- Akshat Gandhi, Bhavna Varshney & Anurag Varshney </p>
 </div>
  </body>
  </html> 

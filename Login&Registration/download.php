@@ -1,13 +1,15 @@
 <?php
-require 'C:\Users\project G22\vendor\autoload.php';
+require 'C:Path to Composer Autoload php File';
 require_once('..\EncryptionAndDecryption\aes.php');
+require 'KeyGeneration.php';
 if(isset($_POST['Download'])){
 
+$credentials = new Aws\Credentials\Credentials('Your secret AWS Key and ID');
 
 
 	$s3 = new Aws\S3\S3Client([
 	    'version'     => 'latest',
-	    'region'      => 'ap-south-1',
+	    'region'      => 'Your region here',
 	    'credentials' => $credentials
 	]);	
 
@@ -17,7 +19,7 @@ if(isset($_POST['Download'])){
 	
 	
 	// Fetching Source User UID number
-	$conn = mysqli_connect("localhost","root","");
+	$conn = mysqli_connect("","","");//Your Database info here
 	mysqli_select_db($conn,"project1");
 	$sql = "Select UID from users where username='$username'";
 	$result = mysqli_query($conn,$sql);
@@ -36,8 +38,8 @@ if(isset($_POST['Download'])){
     $arrays = explode("_",$filename);
     $author_uid = $arrays[0];
     $dest = str_replace(".encrypt","",$filename);
-		
-		$decryptedFile = decryption("Download/".$filename,$author_uid,"Download/".$dest);
+	$key = generatekey($author_uid);	
+		$decryptedFile = decryption("Download/".$filename,$key,"Download/".$dest);
 		echo "<script type='text/javascript'>alert('Downloaded!');</script>";
     }
 ?>
